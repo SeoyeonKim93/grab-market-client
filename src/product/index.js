@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "./index.css";
 
 function ProductPage() {
   const { id } = useParams();
@@ -35,6 +36,12 @@ function ProductPage() {
         {/* public 파일 경로는 생략 가능 */}
         <img src="/images/icons/avatar.png" />
         <span>{product.seller}</span>
+      </div>
+      <div id="contents-box">
+        <div id="name">{product.name}</div>
+        <div id="price">{product.price}원</div>
+        <div id="createdAt">2021년 9월 3일</div>
+        <div id="description">{product.description}</div>
       </div>
     </div>
   );
