@@ -1,6 +1,8 @@
 import './index.css';
 import axios from "axios";
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
+
 function MainPage(){
 // 통신 결과를 아래 card에 넣어 주기위해 state 사용
     const [products, setProducts] = React.useState([]);
@@ -36,19 +38,21 @@ React.useEffect(
                     {/* jsx 문법을 사용해서 구축 */}
                     {products.map(function(product,index){
                             return(
-                    <div className="product-card">
-                        <div>
-                            <img className="product-img" src={product.imageurl} alt="profile"/>
-                        </div>
-                        <div className="product-contents">
-                            <span className="product-name">{product.name}</span>
-                            <span className="product-price">{product.price}원</span>
-                            <div className="product-seller">
-                                <img className="product-avatar" src="images/icons/avatar.png" alt="profile"/>
-                                <span>{product.seller}</span>
-                            </div>
-                        </div>
-                    </div>
+                                <div className="product-card">
+                                <Link className="product-link" to={`/product/${index}`}>
+                                    <div>
+                                        <img className="product-img" src={product.imageurl} alt="profile"/>
+                                    </div>
+                                    <div className="product-contents">
+                                    <span className="product-name">{product.name}</span>
+                                    <span className="product-price">{product.price}원</span>
+                                        <div className="product-seller">
+                                          <img className="product-avatar" src="images/icons/avatar.png" alt="profile"/>
+                                          <span>{product.seller}</span>
+                                        </div>
+                                    </div>
+                                </Link>
+                                </div>
                             );
                         })}
                          

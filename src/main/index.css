@@ -14,7 +14,7 @@
     border-bottom: 1px solid gray;
 }
 #body {
-    height: 100%;
+    height: 100vh;
     /* background-color: blue; */
     width: 1024px;
     /* 부모로부터 가운데 정렬 */
@@ -93,4 +93,11 @@
 }
 .product-avatar {
     width: 24px;
+}
+
+.product-link{
+    /* text의 색이 변하지 않게함 */
+    color: inherit;
+    /* text의 밑줄이 사라짐 */
+    text-decoration: none;
 }
