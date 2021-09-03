@@ -18,54 +18,46 @@ function MainPage() {
         setProducts(products);
       })
       .catch(function (error) {
-        console.log("에러 발생 :", error);
+        console.error("에러 발생 :", error);
       });
   }, []);
 
   return (
     <div>
-      <div id="header">
-        <div id="header-area">
-          <img src="images/icons/logo.png" />
-        </div>
+      <div id="banner">
+        <img src="images/banners/banner1.png" alt="profile" />
       </div>
-      <div id="body">
-        <div id="banner">
-          <img src="images/banners/banner1.png" />
-        </div>
-        <h1>판매되는 상품들</h1>
-        <div id="product-list">
-          {/* jsx 문법을 사용해서 구축 */}
-          {products.map(function (product, index) {
-            return (
-              <div className="product-card">
-                <Link className="product-link" to={`/product/${index}`}>
-                  <div>
+      <h1>판매되는 상품들</h1>
+      <div id="product-list">
+        {/* jsx 문법을 사용해서 구축 */}
+        {products.map(function (product, index) {
+          return (
+            <div className="product-card">
+              <Link className="product-link" to={`/product/${product.id}`}>
+                <div>
+                  <img
+                    className="product-img"
+                    src={product.imageurl}
+                    alt="profile"
+                  />
+                </div>
+                <div className="product-contents">
+                  <span className="product-name">{product.name}</span>
+                  <span className="product-price">{product.price}원</span>
+                  <div className="product-seller">
                     <img
-                      className="product-img"
-                      src={product.imageurl}
+                      className="product-avatar"
+                      src="images/icons/avatar.png"
                       alt="profile"
                     />
+                    <span>{product.seller}</span>
                   </div>
-                  <div className="product-contents">
-                    <span className="product-name">{product.name}</span>
-                    <span className="product-price">{product.price}원</span>
-                    <div className="product-seller">
-                      <img
-                        className="product-avatar"
-                        src="images/icons/avatar.png"
-                        alt="profile"
-                      />
-                      <span>{product.seller}</span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+                </div>
+              </Link>
+            </div>
+          );
+        })}
       </div>
-      <div id="footer"></div>
     </div>
   );
 }

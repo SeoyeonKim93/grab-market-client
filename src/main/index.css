@@ -1,103 +1,82 @@
 /* Tag에 css 적용 */
 * {
-    /* 모든 tag에 기본적으로 margin, padding이 들어가있는 것을 지워준다 */
-    margin: 0;
-    padding: 0;
+  /* 모든 tag에 기본적으로 margin, padding이 들어가있는 것을 지워준다 */
+  margin: 0;
+  padding: 0;
 }
 
-/* Id에  css 적용 */
-#header {
-    height: 64px;
-    /* background-color: black; */
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid gray;
-}
-#body {
-    height: 100vh;
-    /* background-color: blue; */
-    width: 1024px;
-    /* 부모로부터 가운데 정렬 */
-    margin: 0 auto;
-    padding-bottom: 24px;
-}
-#footer {
-    height: 200px;
-    background-color: rgb(230,230,230);
-}
 #banner {
-    height: 300px;
-    background-color: yellow;
+  height: 300px;
+  background-color: yellow;
 }
 #header-area {
-    width: 1024px;
-    height: 100%;
-    /* background-color: orange; */
-    /* margin: 0 auto; */
-    display:flex;
-    align-items: center;
+  width: 1024px;
+  height: 100%;
+  /* background-color: orange; */
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
 }
 
 /* 자식선택자 사용 */
 #header-area > img {
-    width: 128px;
-    height: 38px;
+  width: 128px;
+  height: 38px;
 }
 #banner > img {
-    width: 100%;
+  width: 100%;
 }
 #body > h1 {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
-
 #product-list {
-    display: flex;
-    /* 줄 넘어가게 하는 옵션 */
-    flex-wrap: wrap;
-    margin-top: 12px;
+  display: flex;
+  /* 줄 넘어가게 하는 옵션 */
+  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
 /* Class에 css 적용 */
 .product-card {
-    width: 180px;
-    height: 300px;
-    /* background-color: gray; */
-    margin-left: 12px;
-    margin-bottom: 12px;
-    border: 1px solid rgb(230,230,230);
-    border-radius: 12px;
-    overflow: hidden;
+  width: 180px;
+  height: 300px;
+  /* background-color: gray; */
+  margin-left: 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 12px;
+  overflow: hidden;
 }
 .product-img {
-    width: 100%;
-    height: 210px;
+  width: 100%;
+  height: 210px;
 }
-.product-contents{
-    display:flex;
-    flex-direction: column;
-    padding: 8px;
+.product-contents {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
 }
 .product-name {
-    font-size: 14px;
+  font-size: 14px;
 }
 .product-price {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
 }
 .product-seller {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 .product-avatar {
-    width: 24px;
+  width: 24px;
 }
 
-.product-link{
-    /* text의 색이 변하지 않게함 */
-    color: inherit;
-    /* text의 밑줄이 사라짐 */
-    text-decoration: none;
+.product-link {
+  /* text의 색이 변하지 않게함 */
+  color: inherit;
+  /* text의 밑줄이 사라짐 */
+  text-decoration: none;
 }
