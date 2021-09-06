@@ -10,9 +10,12 @@ function MainPage() {
   //  state가 변화됨에 따라 무한 반복되는 것을 방지하는 함수 : useEffect
   React.useEffect(function () {
     axios
-      .get(
-        "https://0a6a94d4-5496-4870-a65b-ba04a9d2458f.mock.pstmn.io/products"
-      )
+      // mock server에서 데이터 불러오기
+      // .get(
+      //   "https://0a6a94d4-5496-4870-a65b-ba04a9d2458f.mock.pstmn.io/products"
+      // )
+      // 내가 만든 node 서버에서 데이터 불러오기
+      .get("http://localhost:8080/products")
       .then(function (result) {
         const products = result.data.product;
         setProducts(products);

@@ -1,28 +1,14 @@
 /* Tag에 css 적용 */
-* {
-  /* 모든 tag에 기본적으로 margin, padding이 들어가있는 것을 지워준다 */
-  margin: 0;
-  padding: 0;
-}
+
 
 #banner {
   height: 300px;
   background-color: yellow;
 }
-#header-area {
-  width: 1024px;
-  height: 100%;
-  /* background-color: orange; */
-  /* margin: 0 auto; */
-  display: flex;
-  align-items: center;
-}
+
 
 /* 자식선택자 사용 */
-#header-area > img {
-  width: 128px;
-  height: 38px;
-}
+
 #banner > img {
   width: 100%;
 }

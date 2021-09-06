@@ -22,7 +22,7 @@ function App() {
           <Button
             size="large"
             onClick={function () {
-              // 다른 경로로 이동하는 코드
+              // Link 코드와 비슷 => 다른 경로로 이동하는 코드
               history.push("/upload");
             }}
             icon={<DownloadOutlined />}
