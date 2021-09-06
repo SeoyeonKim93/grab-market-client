@@ -1,17 +1,34 @@
+import "antd/dist/antd.css";
 import "./App.css";
 import MainPage from "./main/index.js";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Link, useHistory } from "react-router-dom";
 import UploadPage from "./upload";
 import ProductPage from "./product";
+import { Button } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
 
 function App() {
+  const history = useHistory();
   return (
     <div>
       {/* 모든 Page Component에 header와 footer가 들어가게 App.js에 추가해준다 */}
       {/* App.js에 옮겼다면, 관련된 css 내용도 App.css에 옮겨주기 */}
       <div id="header">
         <div id="header-area">
-          <img src="/images/icons/logo.png" alt="profile" />
+          {/* 기본 경로로 돌아가는 Link 생성 */}
+          <Link to="/">
+            <img src="/images/icons/logo.png" alt="profile" />
+          </Link>
+          <Button
+            size="large"
+            onClick={function () {
+              // 다른 경로로 이동하는 코드
+              history.push("/upload");
+            }}
+            icon={<DownloadOutlined />}
+          >
+            상품 업로드
+          </Button>
         </div>
       </div>
       <div id="body">
